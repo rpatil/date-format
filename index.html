@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Date Format Ruby Gem For Ruby On Rails</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <div id="header">
+      <nav>
+        <li class="fork"><a href="https://github.com/rpatil/date_format/fork" target="_blank">Fork On GitHub</a></li>
+        <li class="downloads"><a href="https://github.com/rpatil/date_format/archive/master.zip" target="_blank">ZIP</a></li>
+        <li class="downloads"><a href="https://rubygems.org/downloads/date_format-0.3.1.gem" target="_blank">Gem</a></li>
+        <li class="title">DOWNLOADS</li>
+      </nav>
+    </div><!-- end header -->
+
+    <div class="wrapper">
+      <section>
+        <div id="title">
+          <h1>Date Format Ruby Gem</h1>
+          <p>Design for the Ruby On Rails (RoR) to access formatted datetime.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/rpatil">Rahul Patil  </a></span>
+          <span class="credits right">This project is released under the terms of the MIT license.</span>
+        </div>
+
+        <h1>Welcome</h1>
+        <p>Date Format is the gem used to access formatted datetime. The library take raw date as input and adds a method to give formatted date. By using same gem, user can find the date difference from start date to end date in different format like seconds, minutes, hours, days, months and years.</p>
+
+        <h2>Installation</h2>
+        <p>Add this line to your application's Gemfile:</p>
+        <pre><code>$ gem 'date_format'</code></pre>
+
+        <p>And then execute:</p>
+        <pre><code>$ bundle</code></pre>
+
+        <p>Or install it yourself as:</p>
+        <pre><code>$ gem install date_format</code></pre>
+
+        <h2>Usage</h2>
+        <p>Try this snippet of code on ruby irb</p>
+
+        <pre><code>require 'date_format'
+today_time = Time.now
+puts DateFormat.change_to(today_time, "GENERAL_DATE")               # => 10/11/14 05:12:26 PM
+puts DateFormat.change_to(today_time, "LONG_DATE")                  # => Saturday, October 11, 2014
+puts DateFormat.change_to(today_time, "ISO_8601_FORMAT")            # => 2014-10-11
+puts DateFormat.change_to(today_time, "MEDIUM_DATE")                # => 11-Oct-2014
+puts DateFormat.change_to(today_time, "SHORT_DATE")                 # => 10/11/14 (mm/dd/yy)
+puts DateFormat.change_to(today_time, "LONG_TIME")                  # => 05:12:26 PM
+puts DateFormat.change_to(today_time, "MEDIUM_TIME")                # => 17:12 PM
+puts DateFormat.change_to(today_time, "SHORT_TIME")                 # => 17:12
+puts DateFormat.change_to(today_time, "WEEK_OF_YEAR")               # => 40
+puts DateFormat.change_to(today_time, "DAY_IN_MONTH")               # => 11
+puts DateFormat.change_to(today_time, "JULIAN_DAY")                 # => 2014
+puts DateFormat.change_to(today_time, "ONLY_HOUR_IN_24HOUR_FORMAT") # => 17
+puts DateFormat.change_to(today_time, "HOURS_IN_24HOUR_FORMAT")     # => 17:12
+puts DateFormat.change_to(today_time, "MINUTE_IN_HOUR")             # => 12
+puts DateFormat.change_to(today_time, "ONLY_DATE")                  # => October 11, 2014
+puts DateFormat.change_to(today_time, "LONG_DATE_SHORT")            # => Sat, October 11, 2014
+puts DateFormat.change_to(today_time, "ONLY_DATE_DEFAULT")          # => 11/10/2014 (dd/mm/yy)
+puts DateFormat.change_to(today_time, "ONLY_DATE_SHORT")            # => Oct 11, 2014
+puts DateFormat.change_to(today_time, "ONLY_DATE_SHORTEST")         # => Sat, Oct 11, 2014
+puts DateFormat.change_to(today_time, "")                           # => 11.10.14
+puts DateFormat.change_to("", "")                                   # => NA
+
+# For Time Difference
+start_date = Time.parse('2014-05-25 18:37:11')
+DateFormat.time_difference(start_date, "PRESENT_DAY", "DAY_ONLY")
+DateFormat.time_difference(start_date, "PRESENT_DAY", "HOUR_ONLY")
+DateFormat.time_difference(start_date, "PRESENT_DAY", "MINUTE_ONLY")
+DateFormat.time_difference(start_date, "PRESENT_DAY", "SECOND_ONLY")
+DateFormat.time_difference(start_date, "", "DAY_ONLY")
+DateFormat.time_difference(start_date, "", "HOUR_ONLY")
+DateFormat.time_difference(start_date, "", "MINUTE_ONLY")
+DateFormat.time_difference(start_date, "", "SECOND_ONLY")
+DateFormat.time_difference(start_date, "AA", "HOUR_ONLY")
+DateFormat.time_difference(start_date, "XX", "MINUTE_ONLY")
+DateFormat.time_difference(start_date, "DD", "SECOND_ONLY")
+</code></pre>       
+
+        <p>For more info on GitHub Pages, check out <a href="http://pages.github.com/">pages.github.com</a>. For help, check the <a href="http://help.github.com/pages">GitHub Pages documentation</a>.</p>
+
+        <h2>Versions</h2>
+        <ul>
+          <li>0.3.1 - February 19, 2015 (7 KB)</li>
+          <li>0.3.0 - February 13, 2015 (6 KB) <a href="https://rubygems.org/downloads/date_format-0.3.0.gem" target="_blank">Download</a> </li>
+          <li>0.2.5 - October 13, 2014 (7 KB) <a href="https://rubygems.org/downloads/date_format-0.2.5.gem" target="_blank">Download</a> </li>
+          <li>0.2.0 - October 11, 2014 (7 KB) <a href="https://rubygems.org/downloads/date_format-0.2.0.gem" target="_blank">Download</a> </li>
+          <li>0.1.0 - May 14, 2014 (7 KB) <a href="https://rubygems.org/downloads/date_format-0.1.0.gem" target="_blank">Download</a> </li>
+        </ul>
+
+        <h2>Contributing</h2>
+        <ul>
+          <li>Fork it ( https://github.com/[my-github-username]/date_format/fork )</li>
+          <li>Create your feature branch (git checkout -b my-new-feature)</li>
+          <li>Commit your changes (git commit -am 'Add some feature')</li>
+          <li>Push to the branch (git push origin my-new-feature)</li>
+          <li>Create a new Pull Request</li>
+        </ul>
+        <hr>
+
+        <h2>Who's this Rahul Patil?</h2>
+        <p>He's a RubyOnRails / frontend dev, who would like to think his code is worked through and thought through well. He can be  found on <a href="http://facebook.com/rahulpatil.scs">Facebook</a>, and <a href="http://github.com/rpatil">GitHub</a>
+          <br/><br/>
+          <a href="http://stackexchange.com/users/163972">
+            <img src="http://stackexchange.com/users/flair/163972.png" width="208" height="58" alt="profile for Rubyist on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for Rubyist on Stack Exchange, a network of free, community-driven Q&amp;A sites">
+          </a>  
+        </p>
+      </section>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
